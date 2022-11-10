@@ -1,0 +1,17 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "mystifying-leakey-44c457.netlify",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "mystifying-leakey-44c457.netlify",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/mahjong.svg",
+      "type": "image/svg+xml"
+    }
+  ]
+}

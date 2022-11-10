@@ -1,0 +1,12 @@
+.stage-label {
+  grid-area: footer;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.turtle {
+    color: black;
+    background-image: url(./assets/TURTLE.png);
+    background-size: contain;
+    image-rendering: pixelated;
+  }
+}

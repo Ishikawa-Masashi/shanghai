@@ -1,0 +1,32 @@
+.container {
+  z-index: 10000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+  margin: auto;
+  background-color: #3e2ecd;
+}
+
+.TableLabel {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  // background: #009485;
+  font-weight: bold;
+}
+.TableHead {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  background: #009485;
+  font-weight: bold;
+}
+
+.TableRow {
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  width: 100%;
+}

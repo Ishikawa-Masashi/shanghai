@@ -1,0 +1,17 @@
+.container {
+  z-index: 10000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+  margin: auto;
+  background-color: #3e2ecded;
+  border-radius: 6px;
+  border: 2px solid #1f0000;
+  box-shadow: 0px 6px 6px 0px #0000006b;
+}
+
+.auth {
+  
+}

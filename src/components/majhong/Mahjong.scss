@@ -1,0 +1,30 @@
+.mahjong {
+  display: flex;
+  justify-content: space-around;
+
+  &__left {
+    display: flex;
+    width: 32px;
+    flex-direction: column;
+    justify-content: space-around;
+    // padding: 32px 0;
+  }
+
+  &__right {
+    width: 120px;
+    height: 100%;
+  }
+}
+
+.back {
+  background-color: #fefefb;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  background-size: contain;
+  background-position: center;
+
+  width: 120px;
+  height: 48px;
+  flex-shrink: 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAgCAYAAACFM/9sAAAAAXNSR0IArs4c6QAAAXRJREFUaIHtmsGxgjAQhpc3FmAJr4V3ekdpwRmPFMHREji+Ijw6Ywty9GQLlGAHvoMjBCSb5F8NaPa7QWZh/dmfhI0Z2bkyYymSjZ38ip3Fp6ECChmWZWvb/TJyJjNnc+kdtrppBQpZoIG772emMW+Kxj62IMC2KYl3x9Rmc+k0C67Au3iH8+0a65+sd+zLnOJ8xmwEvQOH4ikBAqp443hZGBXvVNdERPS7WkWNi4lTQEnlVWUOxUrjYsJaWG3rxlmBEvGGsb4Wi/3A0DyJBAtphCkshhCSp1PAU10Hv8zNWKJuMjCfNLe+QicRFDRPIg8BqzKn7d8R+jGxJxEUyf281oFVmU+yRHgH2Aosmm4mRipx6snAxGVFFGcFmp0IrcRHvCysItrxXsaM2dkEFZWLQ8decT8bGQX2A1PsBQ4bqmZ7vyegCSdmaiIWzcOeSAv0JcK1uFNDN5WEWLc1FRbd1nwWKqAQ7vtG7dxH/1z0ClRAIf/bjanETlDpqQAAAABJRU5ErkJggg==');
+}

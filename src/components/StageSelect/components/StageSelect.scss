@@ -1,0 +1,73 @@
+.stage-select {
+  display: grid;
+  grid-template:
+    'header header header' 10%
+    'left main right' 80%
+    'footer footer footer' 10%/10% 80% 10%;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  image-rendering: pixelated;
+  background-color: rgb(1 0 51 / 38%);
+  border-radius: 6px;
+  border: 0.25em solid hsl(274deg 59% 27%);
+  transition: 0.1s;
+  box-shadow: 0 2px 0px #0000006b;
+  position: relative;
+
+  .left {
+    grid-area: left;
+  }
+
+  .right {
+    grid-area: right;
+  }
+
+  .label {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__ label {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    width: 50%;
+    padding: 6px;
+    display: flex;
+
+    &:hover {
+      background-color: rgba(1, 0, 51, 0.26);
+    }
+  }
+
+  &__left {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: left;
+  }
+
+  &__right {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.stage-container {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

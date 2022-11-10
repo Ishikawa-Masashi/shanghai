@@ -1,0 +1,139 @@
+// .hg-container {
+//   display: grid;
+//   grid-template:
+//     'header header header' 80px
+//     'left main right' auto
+//     'footer footer footer' 50px /
+//     300px 1fr 20%;
+// }
+
+// $areas: header, left, main, right, footer;
+
+// @each $area in $areas {
+//   .#{$area} {
+//     grid-area: #{$area};
+//   }
+// }
+
+// CSSの命名規則はBEMを用いる
+// [block]__[element]--[modifier]
+
+.title {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template:
+    'header header header' 10%
+    'left main right' 80%
+    'footer footer footer' 10% / 5% 90% 5%;
+
+  &__header {
+    grid-area: header;
+
+    display: grid;
+    grid-template: 'left main right' 100% / 5% 90% 5%;
+    background-color: rgba(48, 164, 35, 0.54);
+  }
+
+  &__header-main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__settings-menu {
+    grid-area: right;
+    align-items: center;
+    display: flex;
+  }
+
+  &__menu {
+    grid-area: right;
+  }
+
+  &__main {
+    grid-area: main;
+    padding: 2%;
+    box-sizing: border-box;
+  }
+
+  &__right {
+    grid-area: right;
+    padding: 2%;
+    box-sizing: border-box;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    grid-area: footer;
+    background-color: hsl(0deg 0% 0% / 30%);
+    box-shadow: 0px 0px 20px 20px rgb(0 0 0 / 30%);
+    padding: 0.5vmin;
+
+    display: grid;
+    grid-template: 'left main right' 100%/5% 90% 5%;
+  }
+
+  &__footer-main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__footer-right {
+    grid-area: right;
+    // display: flex;
+    // justify-content: center;
+  }
+
+  &__about-button {
+    display: flex;
+    border: 2px solid;
+    border-radius: 50%;
+    background-color: #585858;
+    box-shadow: 0px 4px 9px #0000006b;
+    cursor: pointer;
+  }
+
+  &__login-button {
+    border: 2px solid;
+    border-radius: 6px;
+    background-color: #636363;
+    box-shadow: 0px 4px 9px #0000006b;
+    cursor: pointer;
+  }
+
+  &__game-start-button {
+    align-items: center;
+    background-color: #8d0000e0;
+    border-radius: 6px;
+    border: 2px solid #1f0000;
+    box-shadow: 0px 4px 9px #0000006b;
+    cursor: pointer;
+    display: flex;
+    grid-area: main;
+    justify-content: center;
+    padding: 2px;
+  }
+
+  .game-start-button {
+    border: 2px solid #1f0000;
+    border-radius: 6px;
+    background-color: #8d0000e0;
+    box-shadow: 0px 4px 9px #0000006b;
+    padding: 2px;
+    cursor: pointer;
+    width: 80%;
+  }
+}

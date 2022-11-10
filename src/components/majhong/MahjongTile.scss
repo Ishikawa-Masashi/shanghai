@@ -1,0 +1,79 @@
+.mahjong-tile {
+  position: relative;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  background-image: url(/tile.png);
+  object-fit: cover;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  width: 117%;
+  height: 116%;
+
+  & > svg {
+    width: 85%;
+    height: 85%;
+  }
+}
+
+.z-1 {
+  bottom: 20%;
+  right: 20%;
+}
+
+.z-2 {
+  bottom: 40%;
+  right: 40%;
+}
+
+.z-3 {
+  bottom: 60%;
+  right: 60%;
+}
+
+.z-4 {
+  bottom: 80%;
+  right: 80%;
+}
+
+.mahjong-tile.selected {
+  & > svg {
+    // box-shadow: rgb(0 0 0 / 70%) 0px 0px 0px;
+    box-shadow: inset rgb(251 255 0 / 70%) 0px 0px 2rem;
+    box-shadow: outset rgb(251 255 0 / 70%) 0px 0px 2rem;
+  }
+}
+
+.blink {
+  animation: blinkAnime 1s infinite alternate;
+}
+
+@keyframes blinkAnime {
+  0% {
+    box-shadow: inset rgb(251 255 0 / 60%) 0px 0px 2rem;
+    // background-color: #fff1b0;
+    /* box-shadow: rgb(221, 221, 221) 3.2px 3.2px 0px,
+      rgb(255, 141, 34) 4.8px 4.8px 0px, rgba(158, 206, 11, 0.7) 0px 1px 9px 0px; */
+  }
+  100% {
+    box-shadow: inset rgb(251 255 0 / 80%) 0px 0px 2rem;
+    // background-color: #fff170;
+    /* box-shadow: rgb(221, 221, 221) 3.2px 3.2px 0px,
+      rgb(255, 141, 34) 4.8px 4.8px 0px, rgba(158, 206, 11, 0.7) 0px 1px 9px 8px; */
+  }
+}
+
+.bounce {
+  animation: bounce 0.1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-10%);
+    animationtimingfunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animationtimingfunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

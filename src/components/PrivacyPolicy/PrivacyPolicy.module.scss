@@ -1,0 +1,28 @@
+.content {
+  //   height: 50vh;
+}
+
+.privacyPolicy {
+  overflow: auto;
+  height: 50vh;
+  background-color: white;
+  font-family: 'hiragino kaku gothic pron', メイリオ, Meiryo, sans-serif;
+  padding: 2rem;
+}
+
+.article {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+
+  p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    background-color: #fff;
+    margin: 0 0 20px 0;
+    text-align: unset;
+    font: unset;
+  }
+}
