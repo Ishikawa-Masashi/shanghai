@@ -9,6 +9,7 @@ import './MahjongTile.scss';
 import { useSettingsContext } from '../../contexts/settings';
 import { setBoard, setTarget, useTarget } from '../../states/gameState';
 import { Box, GridItem } from '@chakra-ui/react';
+import { useSeVolume } from '../../states/settingsState';
 
 type Props = {
   index: number;
@@ -70,7 +71,8 @@ const toClassName: Record<string, string> = {
 export default function MahjongTile(props: Props) {
   const { x, y, z, name, index, disabled = false } = props;
 
-  const { seVolume } = useSettingsContext();
+  //   const { seVolume } = useSettingsContext();
+  const seVolume = useSeVolume();
   //   const { target, setTarget, setBoard } = useContext(MahjongContext);
   const target = useTarget();
 

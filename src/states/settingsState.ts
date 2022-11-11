@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   bgmVolume: 0,
-  seVolume: 0,
+  seVolume: 0.3,
 };
 
 const settingsState = atom(initialState);

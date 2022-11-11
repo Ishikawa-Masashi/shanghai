@@ -15,7 +15,7 @@ import {
 import './Mahjong.scss';
 import { stages } from '../../mahjongSolitaire/layouts';
 // import { Grid } from '../Stage/grid';
-import { ClearScreen } from '../clearScreen/ClearScreen';
+import { ClearScreen } from '../ClearScreen';
 import { ReactP5WrapperComponent } from '../reactP5Wrapper';
 import { sketch } from '../../effects/FireWork2';
 import { useBoard, useRest } from '../../states/gameState';

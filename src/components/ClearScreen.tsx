@@ -1,17 +1,15 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router';
 
-import { sketch } from '../../effects/FireWork2';
-import { useRankingsContext } from '../../providers/RankingsProvider';
-import { ordinal, toDisplayTime } from '../../util';
-import { ReactP5WrapperComponent } from '../reactP5Wrapper';
-import { Typography } from '../Typography';
+import { sketch } from '../effects/FireWork2';
+import { useRankingsContext } from '../providers/RankingsProvider';
+import { ordinal, toDisplayTime } from '../util';
+import { ReactP5WrapperComponent } from './reactP5Wrapper';
+import { Typography } from './Typography';
 
-import './clear-screen.scss';
-import styles from './ClearScreen.module.scss';
-import { Button } from '../Elements';
-import { newGame, useStage } from '../../states/gameState';
-import { useAuth } from '../../hooks/useAuth';
+import { Button } from './Elements';
+import { newGame, useStage } from '../states/gameState';
+import { useAuth } from '../hooks/useAuth';
 import p5 from 'p5';
 import { Box, keyframes } from '@chakra-ui/react';
 import type { ScoreboardData } from '@atsumaru/api-types';
