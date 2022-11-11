@@ -18,8 +18,6 @@ const initialState = {
 
 const gameState = atom(initialState);
 
-const count = atom(0);
-
 export const setBoard = (board: Board) => {
   const { rest } = getState();
   gameState.set((state) => ({ ...state, board, rest }));
@@ -44,13 +42,6 @@ export const setTarget = (target: number) =>
 const unsubscribe = gameState.subscribe((state) => {
   //   console.log(state); // log every update
 });
-
-// create a custom hook
-export const useCount = () => useAtom(count);
-
-// create a custom hook with selector
-export const useStringCount = () =>
-  useAtomWithSelector(count, (count) => count.toString());
 
 // create a custom hook with selector
 export const useBoard = () =>
