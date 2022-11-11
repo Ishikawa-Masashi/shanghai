@@ -8,9 +8,13 @@ import {
   SliderThumb,
   SliderTrack,
 } from '@chakra-ui/react';
+import { setSeVolume } from '../states/settingsState';
 
-export const VolumeSlider = () => {
-  const [sliderValue, setSliderValue] = React.useState(50);
+type Props = { value: number };
+
+export const VolumeSlider = (props: Props) => {
+  const { value } = props;
+  const [sliderValue, setSliderValue] = React.useState(value);
 
   const labelStyles = {
     mt: '2',
@@ -20,7 +24,14 @@ export const VolumeSlider = () => {
 
   return (
     <Box pt={6} pb={2}>
-      <Slider aria-label="slider-ex-6" onChange={(val) => setSliderValue(val)}>
+      <Slider
+        aria-label="slider-ex-6"
+        onChange={(val) => {
+          setSliderValue(val);
+
+          setSeVolume(val / 100);
+        }}
+      >
         <SliderMark value={25} {...labelStyles}>
           25%
         </SliderMark>

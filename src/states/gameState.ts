@@ -42,7 +42,7 @@ export const setTarget = (target: number) =>
   gameState.set((state) => ({ ...state, target }));
 
 const unsubscribe = gameState.subscribe((state) => {
-  console.log(state); // log every update
+  //   console.log(state); // log every update
 });
 
 // create a custom hook

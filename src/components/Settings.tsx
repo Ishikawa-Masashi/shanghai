@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import {
   Box,
+  Center,
+  Flex,
   Grid,
   GridItem,
   Modal,
@@ -11,18 +13,22 @@ import {
 } from '@chakra-ui/react';
 
 import { VolumeSlider } from './VolumeSlider';
+import { useSeVolume } from '../states/settingsState';
 
 type Props = { isOpen: boolean; onClose?: () => void };
 
 export const Settings = (props: Props) => {
   const { isOpen, onClose = () => {} } = props;
 
+  const seVolume = useSeVolume();
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay zIndex={3001} />
       <Box zIndex={3002} position="fixed">
         <ModalContent zIndex={3003}>
-          <ModalHeader>Settings</ModalHeader>
+          <ModalHeader>
+            <Center>Settings</Center>
+          </ModalHeader>
           <Box
             //   backgroundColor="#1401c1e6"
             // boxShadow="0px 2px 0px 0px rgb(1 1 58 / 90%)"
@@ -35,10 +41,12 @@ export const Settings = (props: Props) => {
           >
             <Grid templateColumns="repeat(2, 1fr)" gap={6}>
               <GridItem w="100%" h="10">
-                Sound Effects Volume
+                <Flex align="center">
+                  <Box>Sound Effects Volume</Box>
+                </Flex>
               </GridItem>
               <GridItem w="100%" h="10">
-                <VolumeSlider />
+                <VolumeSlider value={seVolume * 100} />
               </GridItem>
             </Grid>
           </Box>

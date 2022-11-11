@@ -17,10 +17,6 @@ export const setBgmVolume = (bgmVolume: number) =>
 export const setSeVolume = (seVolume: number) =>
   settingsState.set((state) => ({ ...state, seVolume }));
 
-// const unsubscribe = count.subscribe((value) => {
-//   console.log(value); // log every update
-// });
-
 export const useBgmVolume = () =>
   useAtomWithSelector(settingsState, (state) => state.bgmVolume);
 
