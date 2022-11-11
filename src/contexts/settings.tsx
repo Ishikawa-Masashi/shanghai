@@ -18,9 +18,9 @@ export const SettingsContext = createContext({
 
 export const useSettingsContext = () => useContext(SettingsContext);
 
-type Props = {
+type Props = React.PropsWithChildren<{
   /* nothing */
-};
+}>;
 
 export const SettingsProvider: FunctionComponent<Props> = (props) => {
   const { children } = props;

@@ -1,12 +1,6 @@
 // import deepEqual from 'deep-equal';
 import p5 from 'p5';
-import React, {
-  FunctionComponent,
-  memo,
-  useEffect,
-  useState,
-  useRef,
-} from 'react';
+import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
 // import { useIsomorphicEffect } from 'rooks';
 
 export interface SketchProps {
@@ -29,10 +23,10 @@ function createCanvas(sketch: Sketch, container: HTMLDivElement): P5Instance {
   return new p5(sketch, container);
 }
 
-export const ReactP5WrapperComponent: FunctionComponent<P5WrapperProps> = (
-  props
-) => {
-  const { sketch, children } = props;
+type Props = React.PropsWithChildren<P5WrapperProps>;
+
+export const ReactP5WrapperComponent = (props: Props) => {
+  const { sketch } = props;
   const wrapper = useRef<HTMLDivElement>(null);
   const [instance, setInstance] = useState<P5Instance>();
 
@@ -52,10 +46,6 @@ export const ReactP5WrapperComponent: FunctionComponent<P5WrapperProps> = (
     setInstance(canvas);
   }, [sketch, wrapper]);
 
-  //   useEffect(() => {
-  //     instance?.updateWithProps?.(props);
-  //   }, [props]);
-
   return (
     <div
       style={{
@@ -67,15 +57,6 @@ export const ReactP5WrapperComponent: FunctionComponent<P5WrapperProps> = (
         pointerEvents: 'none',
       }}
       ref={wrapper}
-    >
-      {children}
-    </div>
+    />
   );
 };
-
-// export const ReactP5Wrapper = memo(
-//   ReactP5WrapperComponent,
-//   (previousProps: P5WrapperProps, nextProps: P5WrapperProps) => {
-//     return deepEqual(previousProps, nextProps, { strict: true });
-//   }
-// );

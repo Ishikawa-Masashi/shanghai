@@ -9,6 +9,6 @@
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "noEmit": true,
-    "types": ["node"]
+    "types": ["node","@atsumaru/api-types"]
   }
 }

@@ -35,7 +35,9 @@ const RankingsContext = React.createContext({} as RankingsContextType);
 
 export const useRankingsContext = () => React.useContext(RankingsContext);
 
-export const RankingsProvider: React.FC = (props) => {
+type Props = React.PropsWithChildren<{}>;
+
+export const RankingsProvider = (props: Props) => {
   const { children } = props;
   const loginUser = useLoginUser();
 

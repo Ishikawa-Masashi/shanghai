@@ -69,9 +69,7 @@ export const useTarget = () =>
   useAtomWithSelector(gameState, (state) => state.target);
 
 export const newGame = () => {
-  const { board } = init();
-  //   setTarget(-1);
-  //   setBoard(state.board);
+  const { board, rest } = init();
   const target = -1;
-  gameState.set((state) => ({ ...state, target, board }));
+  gameState.set((state) => ({ ...state, target, board, rest }));
 };

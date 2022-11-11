@@ -101,7 +101,7 @@ export const useModal: UseModal = (elementId = 'root', options = {}) => {
   );
 
   const ModalWrapper = useCallback(
-    ({ children }) => {
+    ({ children }: { children: JSX.Element }) => {
       return (
         <Modal
           isOpen={isOpen}

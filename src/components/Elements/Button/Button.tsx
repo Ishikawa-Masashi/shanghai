@@ -2,10 +2,10 @@ import React from 'react';
 
 import classes from './Button.module.scss';
 
-type Props = {
+type Props = React.PropsWithChildren<{
   onClick: (evt: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   style?: React.CSSProperties;
-};
+}>;
 
 export const Button: React.FC<Props> = (props) => {
   const { onClick, children, style = {} } = props;

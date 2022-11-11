@@ -22,7 +22,7 @@ export const Layout = () => {
       gap="1"
       fontWeight="bold"
       backgroundColor="#00b32a"
-      backgroundImage="url(/classy-fabric.png)"
+      backgroundImage="url(./classy-fabric.png)"
     >
       <GridItem pl="2" area={'header'}>
         <Header />

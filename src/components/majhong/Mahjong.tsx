@@ -64,22 +64,31 @@ export default function Mahjong(props: Props) {
 
   return (
     <Box w="full" h="full" display="flex" className={'mahjong'}>
-      <Box w="full" h="full" gridArea="main" display="flex" alignItems="center">
-        <AspectRatio ratio={3 / 2} flex="1 1 auto">
-          <Box w="full" h="full">
-            <Grid
-              w="full"
-              h="full"
-              gridTemplateRows="repeat(auto-fill, 5.882%)"
-              gridTemplateColumns="repeat(auto-fill, 3.125%)"
-            >
-              {tiles}
-            </Grid>
-          </Box>
-        </AspectRatio>
-      </Box>
-      {/* <Grid>{tiles}</Grid> */}
-      {rest === 0 && <ClearScreen timer={timer} time={time} />}
+      {rest !== 0 ? (
+        <Box
+          w="full"
+          h="full"
+          gridArea="main"
+          display="flex"
+          alignItems="center"
+        >
+          <AspectRatio ratio={3 / 2} flex="1 1 auto">
+            <Box w="full" h="full">
+              <Grid
+                w="full"
+                h="full"
+                gridTemplateRows="repeat(auto-fill, 5.882%)"
+                gridTemplateColumns="repeat(auto-fill, 3.125%)"
+              >
+                {tiles}
+              </Grid>
+            </Box>
+          </AspectRatio>
+        </Box>
+      ) : (
+        <ClearScreen timer={timer} time={time} />
+      )}
+      {/* {rest === 0 && <ClearScreen timer={timer} time={time} />} */}
     </Box>
   );
 }

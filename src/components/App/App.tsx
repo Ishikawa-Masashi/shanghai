@@ -3,14 +3,12 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.scss';
 
-import { Screen } from '../Screen';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Layout } from '../../pages/Layout';
 import { Title } from '../../pages/Title';
 import { main } from '../../mahjongSolitaire';
 import { setBoard, setRest, useStage } from '../../states/gameState';
 import { Game } from '../../pages/Game';
-import { ClearScreen } from '../clearScreen';
 
 export const App = () => {
   const stage = useStage();
