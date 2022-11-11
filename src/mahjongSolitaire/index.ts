@@ -60,7 +60,14 @@ const N = W * H * D; // マスの数
 export const X = (p: number) => p % W;
 export const Y = (p: number) => floor(p / W) % H;
 export const Z = (p: number) => floor(p / W / H);
+
 const fromXYZ = (x: number, y: number, z: number) => (z * H + y) * W + x;
+
+const toXYZ = (position: number) => ({
+  x: X(position),
+  y: Y(position),
+  z: Z(position),
+});
 
 // 牌IDから牌の種類を取得
 const group = (v: number) => floor(v / 4);

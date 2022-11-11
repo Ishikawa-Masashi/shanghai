@@ -8,9 +8,9 @@ import { snake } from './snake';
 import { crane } from './crane';
 
 export const stages = [
+  { name: 'Simple', layout: SIMPLE },
   { name: 'Turtle', layout: TURTLE },
   { name: 'Svastika', layout: SVASTIKA },
-  { name: 'Simple', layout: SIMPLE },
   { name: 'Scorpion', layout: scorpion },
   { name: 'Leopard', layout: leopard },
   { name: 'Monkey', layout: monkey },

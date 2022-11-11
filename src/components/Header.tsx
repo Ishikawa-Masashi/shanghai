@@ -1,18 +1,15 @@
 import * as React from 'react';
 
-import { Box, Center, Flex, Heading } from '@chakra-ui/react';
-import { useLocation } from 'react-router-dom';
+import { Center, Heading } from '@chakra-ui/react';
 
 export const Header = () => {
-  const location = useLocation();
-  console.log(location);
+  //   const location = useLocation();
+  //   console.log(location);
   return (
-    // <Flex padding="6px" height="100%" width="100%" justify="space-between">
-    <Center alignItems="end">
+    <Center alignItems="end" h="full">
       <Heading fontSize="5vmin" color="white">
         Mahjongg Solitaire
       </Heading>
     </Center>
-    // </Flex>
   );
 };

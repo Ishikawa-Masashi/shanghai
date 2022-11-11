@@ -8,7 +8,7 @@ import { ReactP5WrapperComponent } from './reactP5Wrapper';
 import { Typography } from './Typography';
 
 import { Button } from './Elements';
-import { newGame, useStage } from '../states/gameState';
+import { newGame, useStage, useStageIndex } from '../states/gameState';
 import { useAuth } from '../hooks/useAuth';
 import p5 from 'p5';
 import { Box, keyframes, SimpleGrid } from '@chakra-ui/react';
@@ -80,14 +80,19 @@ export const ClearScreen = (props: Props) => {
     newGame();
   };
 
+  const stageIndex = useStageIndex();
+  const recordId = React.useMemo(() => {
+    return stageIndex + 1;
+  }, [stageIndex]);
+
   React.useEffect(() => {
     // window.RPGAtsumaru?.scoreboards.display(1);
 
     const callback = async () => {
       const score = timeLimit - time;
-      await window.RPGAtsumaru?.scoreboards.setRecord(1, score);
+      await window.RPGAtsumaru?.scoreboards.setRecord(recordId, score);
       const scoreboardData = await window.RPGAtsumaru?.scoreboards.getRecords(
-        1
+        recordId
       );
       setScoreboardData(scoreboardData);
     };
@@ -116,14 +121,13 @@ export const ClearScreen = (props: Props) => {
     return [];
   }, [scoreboardData]); // React.useMemo(() => rankings[stage.name], [stage, rankings]);
 
-  const ranking2 = React.useMemo(() => {
+  const myRecord = React.useMemo(() => {
     if (scoreboardData) {
-      const ranking = scoreboardData.myRecord;
-      console.log(ranking);
-      return ranking;
+      const myRecord = scoreboardData.myRecord;
+      return myRecord;
     }
-    return [];
-  }, [scoreboardData]); // React.useMemo(() => rankings[stage.name], [stage, rankings]);
+    return null;
+  }, [scoreboardData]);
 
   return (
     <>
