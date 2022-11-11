@@ -11,7 +11,7 @@ import { Button } from './Elements';
 import { newGame, useStage } from '../states/gameState';
 import { useAuth } from '../hooks/useAuth';
 import p5 from 'p5';
-import { Box, keyframes } from '@chakra-ui/react';
+import { Box, keyframes, SimpleGrid } from '@chakra-ui/react';
 import type { ScoreboardData } from '@atsumaru/api-types';
 import { motion } from 'framer-motion';
 
@@ -71,9 +71,9 @@ export const ClearScreen = (props: Props) => {
   const { loginUser } = useAuth();
   const { rankings } = useRankingsContext();
 
-  React.useEffect(() => {
-    console.log(JSON.stringify(rankings));
-  }, [rankings]);
+  //   React.useEffect(() => {
+  //     console.log(JSON.stringify(rankings));
+  //   }, [rankings]);
 
   const onMouseDown = () => {
     navigate('/');
@@ -108,8 +108,9 @@ export const ClearScreen = (props: Props) => {
 
   const ranking = React.useMemo(() => {
     if (scoreboardData) {
-      const ranking = scoreboardData.ranking.sort((a, b) => a.score - b.score);
-      console.log(ranking);
+      //   const ranking = scoreboardData.ranking.sort((a, b) => a.score - b.score);
+      const ranking = scoreboardData.ranking;
+      //   console.log(ranking);
       return ranking;
     }
     return [];
@@ -135,7 +136,12 @@ export const ClearScreen = (props: Props) => {
           }}
         />
       </Box>
-      <Box display="flex" alignItems="center" flexDirection="column">
+      <Box
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        zIndex={100}
+      >
         <Box
           fontFamily="moon"
           fontSize="5vmin"
@@ -147,16 +153,16 @@ export const ClearScreen = (props: Props) => {
         {timer}
 
         {ranking && (
-          <Box>
+          <SimpleGrid columns={2} spacing={10}>
             {ranking.map((record) => {
               return (
-                <Box>
+                <>
                   <Box>{record.userName}</Box>
                   <Box>{toDisplayTime(timeLimit - record.score)}</Box>
-                </Box>
+                </>
               );
             })}
-          </Box>
+          </SimpleGrid>
         )}
 
         <Button onClick={onMouseDown} style={{ width: '6rem' }}>

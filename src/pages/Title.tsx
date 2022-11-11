@@ -30,8 +30,6 @@ import {
 import { About } from '../components/About';
 
 export function Title() {
-  const navigate = useNavigate();
-
   const { loginUser } = useAuth();
 
   const {
@@ -138,7 +136,7 @@ export function Title() {
                 </div>
               )}
 
-              <Box
+              {/* <Box
                 maxW="60px"
                 border="2px solid"
                 borderRadius="6px"
@@ -150,7 +148,7 @@ export function Title() {
                 }
               >
                 {loginUser ? <UserIcon /> : <EnterIcon />}
-              </Box>
+              </Box> */}
               <Box
                 maxW="60px"
                 border="2px solid"
@@ -165,29 +163,7 @@ export function Title() {
             </Flex>
           </>
         </GridItem>
-        <GridItem pl="2" area={'footer'}>
-          <Center>
-            <Box
-              overflow="hidden"
-              fontSize="3vmin"
-              border="2px solid #1f0000"
-              borderRadius="6px"
-              backgroundColor="#8d0000e0"
-              boxShadow="0px 4px 9px #0000006b"
-              padding="2px"
-              cursor="pointer"
-              color="white"
-              onClick={() => navigate('/game')}
-            >
-              Game Start
-            </Box>
-          </Center>
-          {/* <Box>
-            <Button onClick={() => navigate('/game')}>
-              <Typography>Game Start</Typography>
-            </Button>
-          </Box> */}
-        </GridItem>
+        <GridItem pl="2" area={'footer'}></GridItem>
       </Grid>
       {/* <div className={'title'}>
         <div className={'title__main main'}></div>

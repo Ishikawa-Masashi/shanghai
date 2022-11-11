@@ -9,9 +9,11 @@ import { X, Y, Z, tileChar, W } from '../mahjongSolitaire';
 import { Typography } from './Typography';
 import { useBoard, useStageIndex } from '../states/gameState';
 import { stages } from '../mahjongSolitaire/layouts';
-import { AspectRatio, Box, Grid, Heading } from '@chakra-ui/react';
+import { AspectRatio, Box, Center, Grid, Heading } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 export function Stage() {
+  const navigate = useNavigate();
   const board = useBoard();
   const stageIndex = useStageIndex();
 
