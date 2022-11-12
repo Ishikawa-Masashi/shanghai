@@ -11,7 +11,15 @@ import { Button } from './Elements';
 import { newGame, useStage, useStageIndex } from '../states/gameState';
 import { useAuth } from '../hooks/useAuth';
 import p5 from 'p5';
-import { Box, keyframes, SimpleGrid } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Divider,
+  Flex,
+  Heading,
+  keyframes,
+  SimpleGrid,
+} from '@chakra-ui/react';
 import type { ScoreboardData } from '@atsumaru/api-types';
 import { motion } from 'framer-motion';
 
@@ -120,11 +128,14 @@ export const ClearScreen = (props: Props) => {
     const callback = async () => {
       const score = timeLimit - time;
       if (window.RPGAtsumaru) {
-        await window.RPGAtsumaru.scoreboards.setRecord(recordId, score);
-        const scoreboardData = await window.RPGAtsumaru.scoreboards.getRecords(
+        const { RPGAtsumaru } = window;
+        await RPGAtsumaru.scoreboards.setRecord(recordId, score);
+        const scoreboardData = await RPGAtsumaru.scoreboards.getRecords(
           recordId
         );
         setScoreboardData(scoreboardData);
+      } else {
+        setScoreboardData(dummyData);
       }
     };
 
@@ -136,7 +147,7 @@ export const ClearScreen = (props: Props) => {
   const rank = React.useMemo(() => {
     if (scoreboardData) {
       const ranking = scoreboardData.myRecord?.rank;
-      console.log(ranking);
+      //   console.log(ranking);
       return ranking;
     }
     return [];
@@ -188,20 +199,43 @@ export const ClearScreen = (props: Props) => {
         {timer}
 
         {ranking && (
-          <SimpleGrid columns={2} spacing={10}>
-            {ranking.map((record) => {
-              return (
-                <>
-                  <Box color="white">{record.userName}</Box>
-                  <Box color="white">
-                    {toDisplayTime(timeLimit - record.score)}
-                  </Box>
-                </>
-              );
-            })}
-          </SimpleGrid>
+          <Box>
+            <Center>
+              <Heading fontSize="5vmin" color="white">
+                Ranking
+              </Heading>
+            </Center>
+            <Divider />
+            <SimpleGrid
+              columns={3}
+              spacing={2}
+              paddingTop="2"
+              paddingBottom="6"
+            >
+              {ranking.map((record, index) => {
+                return (
+                  <>
+                    <Flex
+                      justify="end"
+                      fontSize="3vmin"
+                      color="white"
+                      paddingRight={6}
+                    >
+                      {index + 1}
+                    </Flex>
+                    <Box color="white" fontSize="3vmin">
+                      {record.userName}
+                    </Box>
+                    <Box color="white" fontSize="3vmin">
+                      {toDisplayTime(timeLimit - record.score)}
+                    </Box>
+                  </>
+                );
+              })}
+            </SimpleGrid>
+          </Box>
         )}
-
+        <Divider />
         <Button onClick={onMouseDown} style={{ width: '6rem' }}>
           <Typography style={{ padding: 0 }}>Exit</Typography>
         </Button>
