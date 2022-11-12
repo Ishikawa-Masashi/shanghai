@@ -104,13 +104,6 @@ export const ClearScreen = (props: Props) => {
   const navigate = useNavigate();
   const stage = useStage();
 
-  const { loginUser } = useAuth();
-  const { rankings } = useRankingsContext();
-
-  //   React.useEffect(() => {
-  //     console.log(JSON.stringify(rankings));
-  //   }, [rankings]);
-
   const onMouseDown = () => {
     navigate('/');
     newGame();
