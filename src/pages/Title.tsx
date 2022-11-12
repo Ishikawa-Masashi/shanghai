@@ -26,6 +26,7 @@ import {
   GridItem,
   useDisclosure,
   Center,
+  Heading,
 } from '@chakra-ui/react';
 import { About } from '../components/About';
 
@@ -94,6 +95,9 @@ export function Title() {
       >
         <GridItem pl="2" area={'header'}>
           {/* <Header /> */}
+          <Center backgroundColor="rgba(48, 164, 35, 0.54)">
+            <Heading color="white">STAGE SELECT</Heading>
+          </Center>
         </GridItem>
         <GridItem pl="2" area={'left'}>
           {/* <Left /> */}
@@ -149,7 +153,7 @@ export function Title() {
               >
                 {loginUser ? <UserIcon /> : <EnterIcon />}
               </Box> */}
-              <Box
+              {/* <Box
                 maxW="60px"
                 border="2px solid"
                 borderRadius="50%"
@@ -159,32 +163,12 @@ export function Title() {
                 onClick={onOpenAboutModal}
               >
                 <HelpCircleIcon />
-              </Box>
+              </Box> */}
             </Flex>
           </>
         </GridItem>
         <GridItem pl="2" area={'footer'}></GridItem>
       </Grid>
-      {/* <div className={'title'}>
-        <div className={'title__main main'}></div>
-
-        <LoginModal>
-          <Login />
-        </LoginModal> */}
-
-      {/* <About /> */}
-      {/* <AboutModal>
-        <BasicFrame>
-          <PrivacyPolicy
-            author={'Masashi Ishikawa(石川 雅史)'}
-            app={'Mahjong Solitaire'}
-          />
-        </BasicFrame>
-      </AboutModal> */}
-      {/* <UserInfoModal>
-          <UserInfo />
-        </UserInfoModal>
-      </div> */}
 
       <About isOpen={isOpenAboutModal} onClose={onCloseAboutModal} />
       <Settings isOpen={isOpenSettingsModal} onClose={onCloseSettingsModal} />
