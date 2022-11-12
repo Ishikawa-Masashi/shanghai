@@ -1,6 +1,5 @@
 const _ = ' ';
 const O = '■';
-
 // prettier-ignore
 export const crane  = [
   // layer 1

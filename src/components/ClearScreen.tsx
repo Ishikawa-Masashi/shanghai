@@ -15,6 +15,42 @@ import { Box, keyframes, SimpleGrid } from '@chakra-ui/react';
 import type { ScoreboardData } from '@atsumaru/api-types';
 import { motion } from 'framer-motion';
 
+const dummyData: ScoreboardData = {
+  myRecord: {
+    isNewRecord: false,
+    rank: 5,
+    score: 0,
+  },
+  ranking: [
+    {
+      rank: 1,
+      score: 1000,
+      userName: 'atsumalion',
+      userId: 123456,
+    },
+    {
+      rank: 2,
+      score: 500,
+      userName: 'atsumatiger',
+      userId: 123457,
+    },
+    {
+      rank: 3,
+      score: 100,
+      userName: 'atsumagorilla',
+      userId: 123458,
+    },
+  ],
+  myBestRecord: {
+    rank: 1,
+    score: 1000,
+    userName: 'atsumalion',
+    userId: 123456,
+  },
+  boardId: 1,
+  boardName: 'スコアボードの名前',
+};
+
 const animationKeyframes = keyframes`
   0% {text-shadow: -0.1vw 0vw 0.1vw #fed128, -0.15vw 0vw 0.2vw #fed128,
       -0.2vw 0vw 0.2vw #fed128, -0.1vw 0vw 3vw #f0130b, -0.2vw 0vw 3vw #f0130b,
@@ -161,8 +197,10 @@ export const ClearScreen = (props: Props) => {
             {ranking.map((record) => {
               return (
                 <>
-                  <Box>{record.userName}</Box>
-                  <Box>{toDisplayTime(timeLimit - record.score)}</Box>
+                  <Box color="white">{record.userName}</Box>
+                  <Box color="white">
+                    {toDisplayTime(timeLimit - record.score)}
+                  </Box>
                 </>
               );
             })}
