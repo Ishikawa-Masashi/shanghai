@@ -119,11 +119,13 @@ export const ClearScreen = (props: Props) => {
 
     const callback = async () => {
       const score = timeLimit - time;
-      await window.RPGAtsumaru?.scoreboards.setRecord(recordId, score);
-      const scoreboardData = await window.RPGAtsumaru?.scoreboards.getRecords(
-        recordId
-      );
-      setScoreboardData(scoreboardData);
+      if (window.RPGAtsumaru) {
+        await window.RPGAtsumaru.scoreboards.setRecord(recordId, score);
+        const scoreboardData = await window.RPGAtsumaru.scoreboards.getRecords(
+          recordId
+        );
+        setScoreboardData(scoreboardData);
+      }
     };
 
     callback();
