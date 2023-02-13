@@ -10,7 +10,7 @@ import { ClearScreen } from '../ClearScreen';
 import { ReactP5WrapperComponent } from '../reactP5Wrapper';
 import { sketch } from '../../effects/FireWork2';
 import { useBoard, useRest } from '../../states/gameState';
-import { Box, Grid } from '@chakra-ui/react';
+import { Box, Flex, Grid } from '@chakra-ui/react';
 
 type Props = {
   // stage?: number[];
@@ -56,13 +56,7 @@ export default function Mahjong(props: Props) {
   return (
     <Box w="full" h="full" display="flex" className={'mahjong'}>
       {rest !== 0 ? (
-        <Box
-          w="full"
-          h="full"
-          gridArea="main"
-          display="flex"
-          alignItems="center"
-        >
+        <Flex w="full" h="full" align="center" justify="center">
           <Box h="full" maxH="full" style={{ aspectRatio: '3 / 2' }}>
             <Grid
               w="full"
@@ -73,11 +67,10 @@ export default function Mahjong(props: Props) {
               {tiles}
             </Grid>
           </Box>
-        </Box>
+        </Flex>
       ) : (
         <ClearScreen timer={timer} time={time} />
       )}
-      {/* {rest === 0 && <ClearScreen timer={timer} time={time} />} */}
     </Box>
   );
 }
