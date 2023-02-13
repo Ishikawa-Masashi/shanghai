@@ -1,16 +1,7 @@
 import React, { useMemo } from 'react';
 import MahjongTile from './MahjongTile';
 
-import {
-  main,
-  getState,
-  X,
-  Y,
-  Z,
-  tileChar,
-  Board,
-  isEmpty,
-} from '../../mahjongSolitaire';
+import { X, Y, Z, tileChar } from '../../mahjongSolitaire';
 
 import './Mahjong.scss';
 import { stages } from '../../mahjongSolitaire/layouts';
@@ -19,7 +10,7 @@ import { ClearScreen } from '../ClearScreen';
 import { ReactP5WrapperComponent } from '../reactP5Wrapper';
 import { sketch } from '../../effects/FireWork2';
 import { useBoard, useRest } from '../../states/gameState';
-import { AspectRatio, Box, Grid } from '@chakra-ui/react';
+import { Box, Grid } from '@chakra-ui/react';
 
 type Props = {
   // stage?: number[];
