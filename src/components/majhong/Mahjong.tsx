@@ -54,7 +54,7 @@ export default function Mahjong(props: Props) {
   }, [board]);
 
   return (
-    <Box w="full" h="full" display="flex" className={'mahjong'}>
+    <Flex w="full" h="full">
       {rest !== 0 ? (
         <Flex w="full" h="full" align="center" justify="center">
           <Box h="full" maxH="full" style={{ aspectRatio: '3 / 2' }}>
@@ -71,6 +71,6 @@ export default function Mahjong(props: Props) {
       ) : (
         <ClearScreen timer={timer} time={time} />
       )}
-    </Box>
+    </Flex>
   );
 }
