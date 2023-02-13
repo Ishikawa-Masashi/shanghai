@@ -6,11 +6,10 @@ import { GameMenu } from '../../components/GameMenu';
 import { Timer } from '../../components/Timer';
 
 import './Game.scss';
-import { reset } from '../../mahjongSolitaire';
 import { ExitIcon } from '../../icons/ExitIcon';
 import { HomeIcon } from '../../icons/HomeIcon';
-import { useRest, useStage } from '../../states/gameState';
-import { Box } from '@chakra-ui/react';
+import { newGame, useRest, useStage } from '../../states/gameState';
+import { Box, Grid } from '@chakra-ui/react';
 
 export function Game() {
   const stage = useStage();
@@ -36,7 +35,7 @@ export function Game() {
   }, [totalTiles, rest, stopWatch]);
 
   return (
-    <div className="game">
+    <Grid className="game">
       <div className="header game__header">
         <div className="game__header-main">
           <div className="game__tiles-label">
@@ -53,7 +52,8 @@ export function Game() {
             className="button-container"
             onClick={() => {
               navigate('/');
-              reset();
+              //   reset();
+              newGame();
             }}
           >
             <div className="button">
@@ -69,6 +69,6 @@ export function Game() {
         <GameMenu />
       </div>
       <Box gridArea="footer" />
-    </div>
+    </Grid>
   );
 }

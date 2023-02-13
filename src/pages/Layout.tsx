@@ -18,7 +18,8 @@ export const Layout = () => {
       `}
       gridTemplateRows={'10% 1fr 10%'}
       gridTemplateColumns={'10% 1fr 10%'}
-      h="100vh"
+      h="100dvh"
+      //   w="100dvw"
       gap="1"
       fontWeight="bold"
       backgroundColor="#00b32a"
