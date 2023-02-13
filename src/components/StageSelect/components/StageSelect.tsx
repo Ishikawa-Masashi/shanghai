@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 function mod(n: number, m: number) {
   return ((n % m) + m) % m;
 }
-export function StageSelect() {
+export const StageSelect = () => {
   const navigate = useNavigate();
   const stageIndex = useStageIndex();
 
@@ -28,17 +28,17 @@ export function StageSelect() {
   };
 
   return (
-    <Box w="full" h="full">
+    <>
       <HStack h="80%" w="full" justify="center">
-        <Box onClick={handleArrowLeftButtonClick}>
+        <Box onClick={handleArrowLeftButtonClick} width="5%">
           <ArrowLeftIcon />
         </Box>
         <Stage />
-        <Box onClick={handleArrowRightButtonClick}>
+        <Box onClick={handleArrowRightButtonClick} width="5%">
           <ArrowRightIcon />
         </Box>
       </HStack>
-      <Center>
+      <Center h="10%">
         <Box
           overflow="hidden"
           fontSize="3vmin"
@@ -55,6 +55,6 @@ export function StageSelect() {
           Game Start
         </Box>
       </Center>
-    </Box>
+    </>
   );
-}
+};

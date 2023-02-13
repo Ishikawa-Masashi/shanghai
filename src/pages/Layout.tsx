@@ -12,15 +12,13 @@ import { ScreenFrame } from '../components/Elements';
 export const Layout = () => {
   return (
     <ScreenFrame>
-      {/* <Box w="full" h="full"> */}
       <Header h="10%" />
       <HStack h="80%">
-        <Left />
+        <Box width="10%" />
         <Outlet />
-        <Right />
+        <Box width="10%" />
       </HStack>
-      <Footer />
-      {/* </Box> */}
+      <Footer h="10%" />
     </ScreenFrame>
   );
 };
