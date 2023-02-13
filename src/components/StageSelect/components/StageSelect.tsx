@@ -7,7 +7,7 @@ import { stages } from '../../../mahjongSolitaire/layouts';
 import { ArrowLeftIcon } from '../../../icons/ArrowLeftIcon';
 import { ArrowRightIcon } from '../../../icons/ArrowRightIcon';
 import { setStageIndex, useStageIndex } from '../../../states/gameState';
-import { Box, Center } from '@chakra-ui/react';
+import { Box, Center, HStack } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
 function mod(n: number, m: number) {
@@ -28,20 +28,17 @@ export function StageSelect() {
   };
 
   return (
-    <div className={'stage-select'}>
-      <div className={'stage-select__left'}>
-        <div className="button" onClick={handleArrowLeftButtonClick}>
+    <Box w="full" h="full">
+      <HStack h="80%" w="full" justify="center">
+        <Box onClick={handleArrowLeftButtonClick}>
           <ArrowLeftIcon />
-        </div>
-      </div>
-      <Stage />
-      <div className={'stage-select__left right'}>
-        <div className="button" onClick={handleArrowRightButtonClick}>
+        </Box>
+        <Stage />
+        <Box onClick={handleArrowRightButtonClick}>
           <ArrowRightIcon />
-        </div>
-      </div>
-
-      <Center gridArea="footer">
+        </Box>
+      </HStack>
+      <Center>
         <Box
           overflow="hidden"
           fontSize="3vmin"
@@ -58,6 +55,6 @@ export function StageSelect() {
           Game Start
         </Box>
       </Center>
-    </div>
+    </Box>
   );
 }

@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { Center, Heading } from '@chakra-ui/react';
+import { Center, CenterProps, Heading } from '@chakra-ui/react';
 
-export const Header = () => {
+export const Header = (props: CenterProps) => {
+  const { ...rest } = props;
   return (
-    <Center alignItems="end" h="full" padding="6px">
+    <Center alignItems="end" padding="6px" {...rest}>
       <Heading fontSize="5vmin" color="white">
         Mahjongg Solitaire
       </Heading>

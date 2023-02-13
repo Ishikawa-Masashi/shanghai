@@ -12,21 +12,15 @@ import { ScreenFrame } from '../components/Elements';
 export const Layout = () => {
   return (
     <ScreenFrame>
-      <Box
-      // h="100%"
-      //   w="100dvw"
-      // fontWeight="bold"
-      // backgroundColor="#00b32a"
-      // backgroundImage="url(./classy-fabric.png)"
-      >
-        <Header />
-        <HStack>
-          <Left />
-          <Outlet />
-          <Right />
-        </HStack>
-        <Footer />
-      </Box>
+      {/* <Box w="full" h="full"> */}
+      <Header h="10%" />
+      <HStack h="80%">
+        <Left />
+        <Outlet />
+        <Right />
+      </HStack>
+      <Footer />
+      {/* </Box> */}
     </ScreenFrame>
   );
 };

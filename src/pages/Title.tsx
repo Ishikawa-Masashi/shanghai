@@ -27,6 +27,7 @@ import {
   useDisclosure,
   Center,
   Heading,
+  HStack,
 } from '@chakra-ui/react';
 import { About } from '../components/About';
 
@@ -80,65 +81,51 @@ export function Title() {
 
   return (
     <>
-      <Grid
-        templateAreas={`
-        "header header header"
-        "left main right"
-        "footer footer footer"
-      `}
-        gridTemplateRows={'60px 1fr 60px'}
-        gridTemplateColumns={'60px 1fr 60px'}
-        h="100%"
-        w="100%"
-        gap="1"
-        fontWeight="bold"
-      >
-        <GridItem pl="2" area={'header'}>
-          <Center backgroundColor="rgba(48, 164, 35, 0.54)">
-            <Heading color="white">STAGE SELECT</Heading>
-          </Center>
-        </GridItem>
-        <GridItem pl="2" area={'left'}></GridItem>
-        <GridItem pl="2" area={'main'}>
-          <Box h="full">
+      <Box h="100%" w="100%" fontWeight="bold">
+        <Center backgroundColor="rgba(48, 164, 35, 0.54)">
+          <Heading color="white">STAGE SELECT</Heading>
+        </Center>
+        <HStack h="full">
+          <Box w="full" h="full">
             <StageSelect />
           </Box>
-        </GridItem>
-        <GridItem pl="2" area={'right'}>
-          {/* <Right /> */}
-          <>
-            <Flex height="100%" direction="column" justify="space-between">
-              <Box
-                maxW="60px"
-                border="2px solid"
-                borderRadius="6px"
-                backgroundColor="#636363"
-                boxShadow="0px 4px 9px #0000006b"
-                cursor="pointer"
-                onClick={onOpenSettingsModal}
+          <Flex
+            height="100%"
+            width="60px"
+            direction="column"
+            justify="space-between"
+          >
+            <Box
+              maxW="60px"
+              border="2px solid"
+              borderRadius="6px"
+              backgroundColor="#636363"
+              boxShadow="0px 4px 9px #0000006b"
+              cursor="pointer"
+              onClick={onOpenSettingsModal}
+            >
+              <SettingsIcon />
+            </Box>
+            {loginUser && (
+              <div
+                className="title__login-button"
+                title="Sign Out"
+                onClick={() => {
+                  const auth = getAuth();
+                  signOut(auth)
+                    .then(() => {
+                      // Sign-out successful.
+                    })
+                    .catch((error) => {
+                      // An error happened.
+                    });
+                }}
               >
-                <SettingsIcon />
-              </Box>
-              {loginUser && (
-                <div
-                  className="title__login-button"
-                  title="Sign Out"
-                  onClick={() => {
-                    const auth = getAuth();
-                    signOut(auth)
-                      .then(() => {
-                        // Sign-out successful.
-                      })
-                      .catch((error) => {
-                        // An error happened.
-                      });
-                  }}
-                >
-                  <ExitIcon />
-                </div>
-              )}
+                <ExitIcon />
+              </div>
+            )}
 
-              {/* <Box
+            {/* <Box
                 maxW="60px"
                 border="2px solid"
                 borderRadius="6px"
@@ -151,7 +138,7 @@ export function Title() {
               >
                 {loginUser ? <UserIcon /> : <EnterIcon />}
               </Box> */}
-              {/* <Box
+            {/* <Box
                 maxW="60px"
                 border="2px solid"
                 borderRadius="50%"
@@ -162,12 +149,9 @@ export function Title() {
               >
                 <HelpCircleIcon />
               </Box> */}
-            </Flex>
-          </>
-        </GridItem>
-        <GridItem pl="2" area={'footer'}></GridItem>
-      </Grid>
-
+          </Flex>
+        </HStack>
+      </Box>
       <About isOpen={isOpenAboutModal} onClose={onCloseAboutModal} />
       <Settings isOpen={isOpenSettingsModal} onClose={onCloseSettingsModal} />
     </>

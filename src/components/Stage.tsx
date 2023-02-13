@@ -51,29 +51,22 @@ export function Stage() {
   }, [board]);
 
   return (
-    <>
-      <Box
-        gridArea="header"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
+    <Box h="100%">
+      <Box display="flex" justifyContent="center" alignItems="center" h="20%">
         <Heading color="white">{stage.name}</Heading>
       </Box>
-      <Box w="full" h="full" gridArea="main" display="flex" alignItems="center">
-        <AspectRatio ratio={3 / 2} flex="1 1 auto">
-          <Box w="full" h="full">
-            <Grid
-              w="full"
-              h="full"
-              gridTemplateRows="repeat(auto-fill, 5.882%)"
-              gridTemplateColumns="repeat(auto-fill, 3.125%)"
-            >
-              {tiles}
-            </Grid>
-          </Box>
-        </AspectRatio>
+      <Box w="full" h="full" maxH="80%" display="flex" alignItems="center">
+        <Box w="full" h="full" style={{ aspectRatio: '3 / 2' }} maxH="full">
+          <Grid
+            w="full"
+            h="full"
+            gridTemplateRows="repeat(auto-fill, 5.882%)"
+            gridTemplateColumns="repeat(auto-fill, 3.125%)"
+          >
+            {tiles}
+          </Grid>
+        </Box>
       </Box>
-    </>
+    </Box>
   );
 }

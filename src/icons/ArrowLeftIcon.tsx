@@ -3,7 +3,8 @@ import React from 'react';
 export const ArrowLeftIcon = () => {
   return (
     <svg
-      width="100%"
+      //   width="100%"
+      width="60px"
       height="100%"
       viewBox="0 0 306 528"
       version="1.1"
