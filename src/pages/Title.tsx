@@ -82,12 +82,13 @@ export function Title() {
   return (
     <>
       <Box h="100%" w="100%" fontWeight="bold">
-        <Center backgroundColor="rgba(48, 164, 35, 0.54)" h="10%">
+        <Center backgroundColor="rgba(48, 164, 35, 0.54)" h="5%">
           <Heading color="white" whiteSpace="nowrap">
             STAGE SELECT
           </Heading>
         </Center>
-        <HStack h="80%">
+        <HStack h="95%">
+          <Box width="60px"></Box>
           <Box w="full" h="full">
             <StageSelect />
           </Box>

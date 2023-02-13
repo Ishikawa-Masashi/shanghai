@@ -29,7 +29,7 @@ export const StageSelect = () => {
 
   return (
     <>
-      <HStack h="80%" w="full" justify="center">
+      <HStack h="90%" w="full" justify="center">
         <Box onClick={handleArrowLeftButtonClick} width="5%">
           <ArrowLeftIcon />
         </Box>

@@ -52,10 +52,10 @@ export function Stage() {
 
   return (
     <Box h="100%">
-      <Box display="flex" justifyContent="center" alignItems="center" h="20%">
+      <Box display="flex" justifyContent="center" alignItems="center" h="15%">
         <Heading color="white">{stage.name}</Heading>
       </Box>
-      <Box w="full" h="full" maxH="80%" display="flex" alignItems="center">
+      <Box w="full" h="full" maxH="85%" display="flex" alignItems="center">
         <Box w="full" h="full" style={{ aspectRatio: '3 / 2' }} maxH="full">
           <Grid
             w="full"
