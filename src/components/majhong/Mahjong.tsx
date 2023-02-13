@@ -72,18 +72,16 @@ export default function Mahjong(props: Props) {
           display="flex"
           alignItems="center"
         >
-          <AspectRatio ratio={3 / 2} flex="1 1 auto">
-            <Box w="full" h="full">
-              <Grid
-                w="full"
-                h="full"
-                gridTemplateRows="repeat(auto-fill, 5.882%)"
-                gridTemplateColumns="repeat(auto-fill, 3.125%)"
-              >
-                {tiles}
-              </Grid>
-            </Box>
-          </AspectRatio>
+          <Box h="full" maxH="full" style={{ aspectRatio: '3 / 2' }}>
+            <Grid
+              w="full"
+              h="full"
+              gridTemplateRows="repeat(auto-fill, 5.882%)"
+              gridTemplateColumns="repeat(auto-fill, 3.125%)"
+            >
+              {tiles}
+            </Grid>
+          </Box>
         </Box>
       ) : (
         <ClearScreen timer={timer} time={time} />
