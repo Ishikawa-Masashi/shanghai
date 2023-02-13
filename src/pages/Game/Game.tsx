@@ -44,9 +44,6 @@ export function Game() {
           </div>
           {timer}
         </div>
-        {/* <div className="right">
-          <SettingsMenu />
-        </div> */}
         <div className="left">
           <div
             className="button-container"
