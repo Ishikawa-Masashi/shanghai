@@ -94,17 +94,15 @@ export function Title() {
         fontWeight="bold"
       >
         <GridItem pl="2" area={'header'}>
-          {/* <Header /> */}
           <Center backgroundColor="rgba(48, 164, 35, 0.54)">
             <Heading color="white">STAGE SELECT</Heading>
           </Center>
         </GridItem>
-        <GridItem pl="2" area={'left'}>
-          {/* <Left /> */}
-        </GridItem>
+        <GridItem pl="2" area={'left'}></GridItem>
         <GridItem pl="2" area={'main'}>
-          {/* <Outlet /> */}
-          <StageSelect />
+          <Box h="full">
+            <StageSelect />
+          </Box>
         </GridItem>
         <GridItem pl="2" area={'right'}>
           {/* <Right /> */}
