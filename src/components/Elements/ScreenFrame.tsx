@@ -12,12 +12,15 @@ export const ScreenFrame = (props: Props) => {
 
   return (
     <Flex
-      width="100%"
-      height="100%"
-      overflow="hidden"
+      position="fixed"
+      top="0"
+      bottom="0"
+      left="0"
+      right="0"
       justify="center"
       align="center"
-      bg="black"
+      backgroundColor={'#00b32a'}
+      backgroundImage={'url(/classy-fabric.png)'}
     >
       <Box
         width="100%"
