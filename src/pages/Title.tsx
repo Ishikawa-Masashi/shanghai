@@ -83,7 +83,7 @@ export function Title() {
     <>
       <Box h="100%" w="100%" fontWeight="bold">
         <Center backgroundColor="rgba(48, 164, 35, 0.54)" h="5%">
-          <Heading color="white" whiteSpace="nowrap">
+          <Heading color="white" whiteSpace="nowrap" padding="6px">
             STAGE SELECT
           </Heading>
         </Center>
