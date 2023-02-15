@@ -54,7 +54,7 @@ export default function Mahjong(props: Props) {
   }, [board]);
 
   return (
-    <Flex w="full" h="full">
+    <Flex w="full" h="full" justify="center">
       {rest !== 0 ? (
         <Flex w="full" h="full" align="center" justify="center">
           <Box h="full" maxH="full" style={{ aspectRatio: '3 / 2' }}>

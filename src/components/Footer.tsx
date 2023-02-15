@@ -8,6 +8,7 @@ export const Footer = (props: BoxProps) => {
     <Box
       backgroundColor="hsla(0deg, 0%, 0%, 0.3)"
       boxShadow="0px 0px 20px 20px rgb(0 0 0 / 30%)"
+      userSelect="none"
       {...rest}
     >
       <Center alignItems="center" h="full" whiteSpace="nowrap">
