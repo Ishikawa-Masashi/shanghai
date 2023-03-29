@@ -11,6 +11,7 @@ import { useBoard, useStageIndex } from '../states/gameState';
 import { stages } from '../mahjongSolitaire/layouts';
 import { AspectRatio, Box, Center, Grid, Heading } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import { ScaleTypographyWithScreenSize } from './ScaleTypographyWithScreenSize';
 
 export function Stage() {
   const navigate = useNavigate();
@@ -52,9 +53,12 @@ export function Stage() {
 
   return (
     <Box h="100%">
-      <Box display="flex" justifyContent="center" alignItems="center" h="15%">
-        <Heading color="white">{stage.name}</Heading>
-      </Box>
+      {/* <Box display="flex" justifyContent="center" alignItems="center" h="15%"> */}
+      <ScaleTypographyWithScreenSize color="white" scalingFactor={3}>
+        {stage.name}
+      </ScaleTypographyWithScreenSize>
+      {/* <Heading color="white">{stage.name}</Heading> */}
+      {/* </Box> */}
       <Box w="full" h="full" maxH="85%" display="flex" alignItems="center">
         <Box w="full" h="full" style={{ aspectRatio: '3 / 2' }} maxH="full">
           <Grid
