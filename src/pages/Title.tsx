@@ -30,6 +30,7 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import { About } from '../components/About';
+import { ScaleTypographyWithScreenSize } from '../components/ScaleTypographyWithScreenSize';
 
 export function Title() {
   const { loginUser } = useAuth();
@@ -83,9 +84,22 @@ export function Title() {
     <>
       <Box h="100%" w="100%" fontWeight="bold">
         <Center backgroundColor="rgba(48, 164, 35, 0.54)" h="5%">
-          <Heading color="white" whiteSpace="nowrap" padding="6px">
+          {/* <Heading
+            color="white"
+            whiteSpace="nowrap"
+            padding="6px"
+            // fontSize="calc(.5 * (1.5vh + 1.1vw))"
+            fontSize="calc(0.9 * (1.5vh + 1.1vw))"
+            // fontSize="calc(.5em + 1vw)"
+            // fontSize="calc(.5rem + 1vw)"
+          > */}
+          {/* STAGE SELECT */}
+          {/* <Box w="full"> */}
+          <ScaleTypographyWithScreenSize color="white">
             STAGE SELECT
-          </Heading>
+          </ScaleTypographyWithScreenSize>
+          {/* </Box> */}
+          {/* </Heading> */}
         </Center>
         <HStack h="95%">
           <Box width="60px"></Box>
