@@ -14,6 +14,7 @@ export const ScaleTypographyWithScreenSize = (props: Props) => {
       w="full"
       justify="center"
       userSelect="none"
+      whiteSpace="nowrap"
       {...props}
     >
       {/* <p style={{ fontSize: '2cqw' }}>{children}</p> */}

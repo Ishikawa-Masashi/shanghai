@@ -3,6 +3,13 @@
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/moon.ttf);
 }
 
+@font-face {
+  font-family: 'PixelMplus12'; /* フォント名 */
+  /* フォーマットごとにパスを指定 */
+  src: url('/fonts/PixelMplus-20130602/PixelMplus12-Regular.ttf')
+    format('truetype');
+  src: url('/fonts/PixelMplus-20130602/PixelMplus12-Regular.ttf') format('woff');
+}
 body {
   background-color: black;
   bottom: 0;

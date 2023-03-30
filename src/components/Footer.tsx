@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Box, BoxProps, Center } from '@chakra-ui/react';
+import { ScaleTypographyWithScreenSize } from './ScaleTypographyWithScreenSize';
 
 export const Footer = (props: BoxProps) => {
   const { ...rest } = props;
@@ -11,9 +12,9 @@ export const Footer = (props: BoxProps) => {
       userSelect="none"
       {...rest}
     >
-      <Center alignItems="center" h="full" whiteSpace="nowrap">
+      <ScaleTypographyWithScreenSize>
         Copyright © 2022 Ishikawa Masashi. All Rights Reserved.
-      </Center>
+      </ScaleTypographyWithScreenSize>
     </Box>
   );
 };
