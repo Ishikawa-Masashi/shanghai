@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { Center, CenterProps, Heading } from '@chakra-ui/react';
-import { SVGText } from './SVGText';
 
 export const Header = (props: CenterProps) => {
   const { ...rest } = props;
