@@ -10,7 +10,7 @@ export const Header = (props: CenterProps) => {
     strokecolor = '#000';
   return (
     <Center alignItems="end" padding="6px" {...rest}>
-      {/* <Heading
+      <Heading
         fontSize="5vmin"
         color="white"
         userSelect="none"
@@ -19,8 +19,7 @@ export const Header = (props: CenterProps) => {
         textShadow={`${strokeWidth}px ${strokeWidth}px 0 ${strokecolor}, ${strokeWidth}px -${strokeWidth}px 0 ${strokecolor}, -${strokeWidth}px ${strokeWidth}px 0 ${strokecolor}, -${strokeWidth}px -${strokeWidth}px 0 ${strokecolor}`}
       >
         Mahjongg Solitaire
-      </Heading> */}
-      <SVGText>Mahjongg Solitaire</SVGText>
+      </Heading>
     </Center>
   );
 };

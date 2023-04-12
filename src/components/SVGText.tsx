@@ -34,14 +34,16 @@ export const SVGText = (props: Props) => {
           x="50%"
           y="50%"
           font-size="70"
-          fontWeight={700}
+          fontWeight={900}
           fill="white"
           dominant-baseline="middle"
           text-anchor="middle"
-          style={{
-            textShadow: `${strokeWidth}px ${strokeWidth}px 0 ${strokecolor}, ${strokeWidth}px -${strokeWidth}px 0 ${strokecolor}, -${strokeWidth}px ${strokeWidth}px 0 ${strokecolor}, -${strokeWidth}px -${strokeWidth}px 0 ${strokecolor}
-          `,
-          }}
+          // style={{
+          //   textShadow: `${strokeWidth}px ${strokeWidth}px 0 ${strokecolor}, ${strokeWidth}px -${strokeWidth}px 0 ${strokecolor}, -${strokeWidth}px ${strokeWidth}px 0 ${strokecolor}, -${strokeWidth}px -${strokeWidth}px 0 ${strokecolor}
+          // `,
+          // }}
+          stroke="#000"
+          strokeWidth={4}
         >
           {children}
         </text>
