@@ -17,7 +17,14 @@ export const Layout = () => {
           <Outlet />
           <Box width="10%" />
         </HStack>
-        <Footer h="10%" />
+        <Footer
+          h="10%"
+          position="absolute"
+          bottom="0"
+          left="0"
+          right="0"
+          alignItems="flex-end"
+        />
       </Box>
     </ScreenFrame>
   );
