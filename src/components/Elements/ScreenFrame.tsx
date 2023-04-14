@@ -22,14 +22,24 @@ export const ScreenFrame = (props: Props) => {
       backgroundColor={'#00b32a'}
       backgroundImage={'url(/classy-fabric.png)'}
     >
-      <Box
+      <Flex
         width="100%"
-        maxHeight="100%"
-        position="relative"
-        style={{ aspectRatio: '16 / 9' }}
+        height="100%"
+        justify="center"
+        align="center"
+        backgroundColor="#00000042"
       >
-        {children}
-      </Box>
+        <Box
+          width="100%"
+          maxHeight="100%"
+          position="relative"
+          style={{ aspectRatio: '16 / 9' }}
+          backgroundColor={'#00b32a'}
+          backgroundImage={'url(/classy-fabric.png)'}
+        >
+          {children}
+        </Box>
+      </Flex>
     </Flex>
   );
 };

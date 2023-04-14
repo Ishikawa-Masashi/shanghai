@@ -54,7 +54,7 @@ export function Stage() {
   return (
     <Box h="100%">
       {/* <Box display="flex" justifyContent="center" alignItems="center" h="15%"> */}
-      <ScaleTypographyWithScreenSize color="white" scalingFactor={3}>
+      <ScaleTypographyWithScreenSize color="white" scalingfactor={3}>
         {stage.name}
       </ScaleTypographyWithScreenSize>
       {/* <Heading color="white">{stage.name}</Heading> */}
