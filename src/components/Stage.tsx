@@ -43,7 +43,7 @@ export function Stage() {
             z={z}
             name={char}
             key={index}
-            disabled
+            // disabled
           />
         );
       }

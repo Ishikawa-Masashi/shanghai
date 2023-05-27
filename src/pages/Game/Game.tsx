@@ -5,11 +5,11 @@ import { Typography } from '../../components/Typography';
 import { GameMenu } from '../../components/GameMenu';
 import { Timer } from '../../components/Timer';
 
-import './Game.scss';
+// import './Game.scss';
 import { ExitIcon } from '../../icons/ExitIcon';
 import { HomeIcon } from '../../icons/HomeIcon';
 import { newGame, useRest, useStage } from '../../states/gameState';
-import { Box, Grid } from '@chakra-ui/react';
+import { Box, Grid, HStack } from '@chakra-ui/react';
 
 export function Game() {
   const stage = useStage();
@@ -35,37 +35,13 @@ export function Game() {
   }, [totalTiles, rest, stopWatch]);
 
   return (
-    <Grid className="game">
-      <div className="header game__header">
-        <div className="game__header-main">
-          <div className="game__tiles-label">
-            <Typography style={{ marginRight: '1rem' }}>Tiles: </Typography>
-            <Typography style={{ width: '7.5vmin' }}>{rest}</Typography>
-          </div>
-          {timer}
-        </div>
-        <div className="left">
-          <div
-            className="button-container"
-            onClick={() => {
-              navigate('/');
-              //   reset();
-              newGame();
-            }}
-          >
-            <div className="button">
-              <HomeIcon />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="main">
-        <Mahjong timer={timer} time={stopWatch.getTime()} />
-      </div>
-      <div className="right">
+    <HStack height="calc(100% - 32px)">
+      <Box height="100%">
         <GameMenu />
-      </div>
-      <Box gridArea="footer" />
-    </Grid>
+      </Box>
+      <Box width="100%" height="100%" maxH="100%">
+        <Mahjong timer={timer} time={stopWatch.getTime()} />
+      </Box>
+    </HStack>
   );
 }

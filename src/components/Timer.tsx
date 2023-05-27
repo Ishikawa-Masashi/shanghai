@@ -48,29 +48,25 @@ export const Timer = (): [Stopwatch, JSX.Element] => {
       <Text
         display="flex"
         justifyContent="center"
-        fontSize="5vmin"
+        // fontSize="5vmin"
         color="white"
-        // -webkit-text-stroke-width: 2px;
-        // -webkit-text-stroke-color: black;
-        stroke="black"
-        textShadow="0px 3px 0px #000000"
-        userSelect="none"
-        fontFamily="UD デジタル 教科書体 N-R"
+        // stroke="black"
+        // textShadow="0px 3px 0px #000000"
+        // userSelect="none"
+        // fontFamily="UD デジタル 教科書体 N-R"
         cursor="pointer"
-        style={{ marginRight: '1rem' }}
+        // style={{ marginRight: '1rem' }}
       >{`TIME `}</Text>
       <Box>
         <Text
           display="flex"
           justifyContent="center"
-          fontSize="5vmin"
+          // fontSize="5vmin"
           color="white"
-          // -webkit-text-stroke-width: 2px;
-          // -webkit-text-stroke-color: black;
-          stroke="black"
-          textShadow="0px 3px 0px #000000"
-          userSelect="none"
-          fontFamily="UD デジタル 教科書体 N-R"
+          // stroke="black"
+          // textShadow="0px 3px 0px #000000"
+          // userSelect="none"
+          // fontFamily="UD デジタル 教科書体 N-R"
           cursor="pointer"
           style={{ width: '5vmin' }}
         >{`${minutes}`}</Text>
@@ -78,14 +74,12 @@ export const Timer = (): [Stopwatch, JSX.Element] => {
       <Text
         display="flex"
         justifyContent="center"
-        fontSize="5vmin"
+        // fontSize="5vmin"
         color="white"
-        // -webkit-text-stroke-width: 2px;
-        // -webkit-text-stroke-color: black;
-        stroke="black"
-        textShadow="0px 3px 0px #000000"
+        // stroke="black"
+        // textShadow="0px 3px 0px #000000"
         userSelect="none"
-        fontFamily="UD デジタル 教科書体 N-R"
+        // fontFamily="UD デジタル 教科書体 N-R"
         cursor="pointer"
         style={{ padding: 0 }}
       >{`'`}</Text>
@@ -93,29 +87,27 @@ export const Timer = (): [Stopwatch, JSX.Element] => {
         <Text
           display="flex"
           justifyContent="center"
-          fontSize="5vmin"
+          // fontSize="5vmin"
           color="white"
-          // -webkit-text-stroke-width: 2px;
-          // -webkit-text-stroke-color: black;
-          stroke="black"
-          textShadow="0px 3px 0px #000000"
+          // stroke="black"
+          // textShadow="0px 3px 0px #000000"
           userSelect="none"
-          fontFamily="UD デジタル 教科書体 N-R"
+          // fontFamily="UD デジタル 教科書体 N-R"
           cursor="pointer"
-          style={{ width: '5vmin' }}
+          // style={{ width: '5vmin' }}
         >{`${milliseconds.slice(0, 2)}`}</Text>
       </Box>
       <Text
         display="flex"
         justifyContent="center"
-        fontSize="5vmin"
+        // fontSize="5vmin"
         color="white"
         // -webkit-text-stroke-width: 2px;
         // -webkit-text-stroke-color: black;
-        stroke="black"
-        textShadow="0px 3px 0px #000000"
+        // stroke="black"
+        // textShadow="0px 3px 0px #000000"
         userSelect="none"
-        fontFamily="UD デジタル 教科書体 N-R"
+        // fontFamily="UD デジタル 教科書体 N-R"
         cursor="pointer"
         style={{ padding: 0 }}
       >{`"`}</Text>
@@ -123,14 +115,14 @@ export const Timer = (): [Stopwatch, JSX.Element] => {
         <Text
           display="flex"
           justifyContent="center"
-          fontSize="5vmin"
+          // fontSize="5vmin"
           color="white"
           // -webkit-text-stroke-width: 2px;
           // -webkit-text-stroke-color: black;
-          stroke="black"
-          textShadow="0px 3px 0px #000000"
+          // stroke="black"
+          // textShadow="0px 3px 0px #000000"
           userSelect="none"
-          fontFamily="UD デジタル 教科書体 N-R"
+          // fontFamily="UD デジタル 教科書体 N-R"
           cursor="pointer"
           style={{ width: '2.5vmin' }}
         >{`${milliseconds.slice(2, 3)}`}</Text>

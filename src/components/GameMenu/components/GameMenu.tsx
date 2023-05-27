@@ -7,6 +7,12 @@ import { PlusIcon } from '../../../icons/PlusIcon';
 
 import './GameMenu.scss';
 import { setBoard } from '../../../states/gameState';
+import { Box, Flex } from '@chakra-ui/react';
+import { CustomButton } from '../../CustomButton';
+
+import { Icon } from '@chakra-ui/react';
+
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export function GameMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -29,23 +35,49 @@ export function GameMenu() {
   };
 
   return (
-    <div className={'game-menu'}>
-      <div className="game-menu__button-container" onClick={handleUndoClick}>
-        <div className="button">
-          <UndoIcon />
+    <>
+      <Flex
+        // backgroundColor="rgb(0,76,82)"
+        h="full"
+        flexDirection="column"
+        justify="flex-end"
+        padding="6px"
+      >
+        <Box w="full">
+          <CustomButton
+            // onClick={onOpen}
+            overflow="hidden"
+            padding="6px"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            borderRadius="50%"
+          >
+            <Icon as={GiHamburgerMenu} />
+          </CustomButton>
+        </Box>
+      </Flex>
+      {/* <div className={'game-menu'}>
+        <div className="game-menu__button-container" onClick={handleUndoClick}>
+          <div className="button">
+            <UndoIcon />
+          </div>
         </div>
-      </div>
-      <div className="game-menu__button-container" onClick={handleResetClick}>
-        <div className="button">
-          <ReloadIcon />
+        <div className="game-menu__button-container" onClick={handleResetClick}>
+          <div className="button">
+            <ReloadIcon />
+          </div>
         </div>
-      </div>
 
-      <div className="game-menu__button-container" onClick={handleNewGameClick}>
-        <div className="button">
-          <PlusIcon />
+        <div
+          className="game-menu__button-container"
+          onClick={handleNewGameClick}
+        >
+          <div className="button">
+            <PlusIcon />
+          </div>
         </div>
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 }
