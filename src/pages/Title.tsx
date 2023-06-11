@@ -40,6 +40,9 @@ import { About } from '../components/About';
 import { ScaleTypographyWithScreenSize } from '../components/ScaleTypographyWithScreenSize';
 import { Stage } from '../components/Stage';
 import { Puzzle } from '../components/Puzzle';
+import { stages } from '../mahjongSolitaire/layouts';
+import { main } from '../mahjongSolitaire';
+import { setBoard, setRest } from '../states/gameState';
 
 export function Title() {
   const { loginUser } = useAuth();
@@ -93,26 +96,45 @@ export function Title() {
 
   return (
     <>
-      <Box h="100%" w="100%" fontWeight="bold">
-        <Tabs size="sm" variant="unstyled">
-          <TabList borderBottom="2px solid rgb(106,149,66)">
+      <Box w="100%" h="calc(100% - 32px)" fontWeight="bold" padding="12px">
+        <Tabs
+          size="sm"
+          // variant="enclosed"
+          // colorScheme="teal"
+          backdropFilter="blur(5px)"
+          // backgroundColor="rgb(62,102,21)"
+          // border="2px solid whtie"
+          // height="100%"
+          // height="calc(100% - 12px)"
+          overflow="hidden"
+          h="calc(100% - 32px)"
+          // border={'2px solid #00000014'}
+        >
+          <TabList
+            // borderBottom="2px solid rgb(106,149,66)"
+            color="white"
+          >
             <Tab
-              color="white"
-              backgroundColor="rgb(62,102,21)"
+              backgroundColor="rgb(0 0 0 / 50%)"
+              fontWeight="900"
+              // color="white"
+              // backgroundColor="rgb(62,102,21)"
               // borderRadius="0"
               // _selected={{ color: 'gray.500' }}
-              borderLeft="2px solid rgb(106,149,66)"
-              borderTop="2px solid rgb(106,149,66)"
-              borderBottom="2px solid rgb(62,102,21)"
-              marginBottom="-2px"
-              borderRight="2px solid rgb(106,149,66)"
+              // borderLeft="2px solid rgb(106,149,66)"
+              // borderTop="2px solid rgb(106,149,66)"
+              // borderBottom="2px solid rgb(62,102,21)"
+              // marginBottom="-2px"
+              // borderRight="2px solid rgb(106,149,66)"
             >
               初級
             </Tab>
             <Tab
-              color="white"
-              backgroundColor="rgb(130,107,1)"
-              borderRadius="0"
+              backgroundColor="rgb(0 0 0 / 50%)"
+              fontWeight="900"
+              // color="white"
+              // backgroundColor="rgb(130,107,1)"
+              // borderRadius="0"
             >
               中級
             </Tab>
@@ -124,86 +146,48 @@ export function Title() {
             bg="rgb(62,102,21)"
             // borderRadius="1px"
           /> */}
-          <TabPanels>
+          <TabPanels height="100%" overflow="hidden">
             <TabPanel
-              backgroundColor="rgb(62,102,21)"
-              borderLeft="2px solid rgb(106,149,66)"
-              borderBottom="2px solid rgb(106,149,66)"
+              // backgroundColor="rgb(62,102,21)"
+              // borderLeft="2px solid rgb(106,149,66)"
+              // borderBottom="2px solid rgb(106,149,66)"
               // borderTop="2px solid rgb(106,149,66)"
-              borderRight="2px solid rgb(106,149,66)"
+              // borderRight="2px solid rgb(106,149,66)"
+              // height="100%"
+
+              h="calc(100% - 34px)"
+              overflowY="auto"
             >
-              <SimpleGrid columns={4} spacing={2}>
-                <Box
-                  bg="rgb(112,195,55)"
-                  width="100%"
-                  height="100%"
-                  padding="6px"
-                  onClick={() => navigate('/game')}
-                >
-                  <Box h="80%">
-                    <Puzzle />
-                  </Box>
-                  <Box fontSize="0.5vw" whiteSpace="nowrap" color="white">
-                    Test
-                  </Box>
-                </Box>
+              <Box height="100%">
+                <SimpleGrid columns={4} spacing={2}>
+                  {stages.map((stage, index) => (
+                    <Box
+                      bg="rgb(0 0 0 / 31%)"
+                      width="100%"
+                      height="100%"
+                      padding="6px"
+                      onClick={() => {
+                        const state = main(stage.layout);
 
-                <Box
-                  bg="rgb(112,195,55)"
-                  width="100%"
-                  height="100%"
-                  padding="6px"
-                >
-                  <Box h="80%">
-                    <Puzzle />
-                  </Box>
-                  <Box fontSize="0.5vw" whiteSpace="nowrap" color="white">
-                    Test
-                  </Box>
-                </Box>
+                        setBoard(state.board);
+                        setRest(state.rest);
 
-                <Box
-                  bg="rgb(112,195,55)"
-                  width="100%"
-                  height="100%"
-                  padding="6px"
-                >
-                  <Box h="80%">
-                    <Puzzle />
-                  </Box>
-                  <Box fontSize="0.5vw" whiteSpace="nowrap" color="white">
-                    Test
-                  </Box>
-                </Box>
-
-                <Box
-                  bg="rgb(112,195,55)"
-                  width="100%"
-                  height="100%"
-                  padding="6px"
-                >
-                  <Box h="80%">
-                    <Puzzle />
-                  </Box>
-                  <Box fontSize="0.5vw" whiteSpace="nowrap" color="white">
-                    Test
-                  </Box>
-                </Box>
-
-                <Box
-                  bg="rgb(112,195,55)"
-                  width="100%"
-                  height="100%"
-                  padding="6px"
-                >
-                  <Box h="80%">
-                    <Puzzle />
-                  </Box>
-                  <Box fontSize="0.5vw" whiteSpace="nowrap" color="white">
-                    Test
-                  </Box>
-                </Box>
-              </SimpleGrid>
+                        navigate('/game');
+                      }}
+                      key={index}
+                      border="1px solid transparent"
+                      _hover={{ border: '1px solid white' }}
+                    >
+                      <Box h="80%">
+                        <Puzzle stage={stage} />
+                      </Box>
+                      <Box fontSize="0.5vw" whiteSpace="nowrap" color="white">
+                        {stage.name}
+                      </Box>
+                    </Box>
+                  ))}
+                </SimpleGrid>
+              </Box>
             </TabPanel>
             <TabPanel backgroundColor="rgb(130,107,1)">
               <p>two!</p>
@@ -228,18 +212,18 @@ export function Title() {
         {/* </Box> */}
         {/* </Heading> */}
         {/* </Center> */}
-        <HStack h="95%">
-          <Box width="60px"></Box>
-          {/* <Box w="full" h="full">
+        {/* <HStack h="95%">
+          <Box width="60px"></Box> */}
+        {/* <Box w="full" h="full">
             <StageSelect />
           </Box> */}
-          <Flex
+        {/* <Flex
             height="100%"
             width="60px"
             direction="column"
             justify="space-between"
-          >
-            {/* <Box
+          > */}
+        {/* <Box
               maxW="60px"
               border="2px solid"
               borderRadius="6px"
@@ -250,7 +234,7 @@ export function Title() {
             >
               <SettingsIcon />
             </Box> */}
-            {loginUser && (
+        {/* {loginUser && (
               <div
                 className="title__login-button"
                 title="Sign Out"
@@ -267,9 +251,9 @@ export function Title() {
               >
                 <ExitIcon />
               </div>
-            )}
+            )} */}
 
-            {/* <Box
+        {/* <Box
                 maxW="60px"
                 border="2px solid"
                 borderRadius="6px"
@@ -282,7 +266,7 @@ export function Title() {
               >
                 {loginUser ? <UserIcon /> : <EnterIcon />}
               </Box> */}
-            {/* <Box
+        {/* <Box
                 maxW="60px"
                 border="2px solid"
                 borderRadius="50%"
@@ -293,11 +277,11 @@ export function Title() {
               >
                 <HelpCircleIcon />
               </Box> */}
-          </Flex>
-        </HStack>
+        {/* </Flex> */}
+        {/* </HStack> */}
       </Box>
-      <About isOpen={isOpenAboutModal} onClose={onCloseAboutModal} />
-      <Settings isOpen={isOpenSettingsModal} onClose={onCloseSettingsModal} />
+      {/* <About isOpen={isOpenAboutModal} onClose={onCloseAboutModal} /> */}
+      {/* <Settings isOpen={isOpenSettingsModal} onClose={onCloseSettingsModal} /> */}
     </>
   );
 }

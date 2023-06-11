@@ -1,13 +1,6 @@
 import * as React from 'react';
 
-import {
-  Box,
-  Center,
-  CenterProps,
-  Flex,
-  Heading,
-  IconButton,
-} from '@chakra-ui/react';
+import { Box, Center, CenterProps, Flex, Heading } from '@chakra-ui/react';
 
 import {
   Button,
@@ -32,6 +25,7 @@ import { Settings } from './Settings';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { newGame, useRest, useStage } from '../states/gameState';
 import { Timer } from './Timer';
+import { IconButton } from './IconButton';
 
 export const Header = (props: CenterProps) => {
   const location = useLocation();
@@ -87,45 +81,10 @@ export const Header = (props: CenterProps) => {
       <Flex
         justify="space-between"
         w="full"
-        backgroundImage="/images/Western-Red-Cedar-Architextures.jpg"
+        backdropFilter="brightness(0.2)"
+        // backgroundImage="/images/Western-Red-Cedar-Architextures.jpg"
       >
-        {/* <Button
-          ref={btnRef}
-          colorScheme="teal"
-          onClick={onOpen}
-          left="0"
-          height="100%"
-          // leftIcon={<Icon as={GiHamburgerMenu} boxSize={10} />}
-          // leftIcon={GiHamburgerMenu}
-
-          leftIcon={<Icon as={GiHamburgerMenu} />}
-        >
-        </Button> */}
-        {/* <IconButton
-          aria-label="Menu"
-          icon={<GiHamburgerMenu />}
-          colorScheme="facebook"
-          size="sm"
-          borderRadius="0"
-          onClick={onOpen}
-        /> */}
-        <CustomButton
-          onClick={onOpen}
-          overflow="hidden"
-          padding="4px"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Box>
-            <Box marginTop="-4px" marginBottom="-4px">
-              <Icon as={GiHamburgerMenu} />
-            </Box>
-            <Box fontSize="10px" lineHeight="10px">
-              Menu
-            </Box>
-          </Box>
-        </CustomButton>
+        <IconButton label="Menu" icon={GiHamburgerMenu} onClick={onOpen} />
         <Box w="full" height="100%">
           <Flex
             w="full"
@@ -141,7 +100,9 @@ export const Header = (props: CenterProps) => {
               'パズル選択'
             ) : (
               <Flex h="full">
-                <CustomButton
+                <IconButton
+                  label="Back"
+                  icon={MdArrowBack}
                   onClick={() => {
                     navigate('/');
                     //   reset();
@@ -150,14 +111,7 @@ export const Header = (props: CenterProps) => {
                     stopWatch.stop();
                     stopWatch.reset();
                   }}
-                  overflow="hidden"
-                  padding="6px"
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                >
-                  <Icon as={MdArrowBack} />
-                </CustomButton>
+                />
                 <Box paddingLeft="32px" paddingRight="24px">{`牌 ${rest}`}</Box>
                 {timer}
               </Flex>

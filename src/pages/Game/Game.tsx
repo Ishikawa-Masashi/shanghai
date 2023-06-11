@@ -39,7 +39,7 @@ export function Game() {
       <Box height="100%">
         <GameMenu />
       </Box>
-      <Box width="100%" height="100%" maxH="100%">
+      <Box width="100%" height="100%" maxH="100%" padding="5vmin">
         <Mahjong timer={timer} time={stopWatch.getTime()} />
       </Box>
     </HStack>

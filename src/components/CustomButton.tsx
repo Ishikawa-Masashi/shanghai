@@ -9,7 +9,7 @@ export const CustomButton = (props: BoxProps) => {
   return (
     <Box
       as="button"
-      // height="24px"
+      // height="33px"
       height="100%"
       // lineHeight="1.2"
       transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
@@ -42,7 +42,6 @@ export const CustomButton = (props: BoxProps) => {
       }
       {...rest}
     >
-      {/* Join Group */}
       {children}
     </Box>
   );

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useMemo } from 'react';
 import MahjongTile from './majhong/MahjongTile';
 
-import { X, Y, Z, tileChar, W } from '../mahjongSolitaire';
+import { X, Y, Z, tileChar, W, create } from '../mahjongSolitaire';
 
 // import './Stage.scss';
 
@@ -13,12 +13,22 @@ import { AspectRatio, Box, Center, Grid, Heading } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { ScaleTypographyWithScreenSize } from './ScaleTypographyWithScreenSize';
 
-export function Puzzle() {
-  const navigate = useNavigate();
-  const board = useBoard();
-  const stageIndex = useStageIndex();
+type Props = {
+  stage: {
+    name: string;
+    layout: string[];
+  };
+};
 
-  const stage = stages[stageIndex];
+export function Puzzle(props: Props) {
+  const { stage } = props;
+
+  const navigate = useNavigate();
+  // const board = useBoard();
+  const { board } = create(stage.layout);
+  // const stageIndex = useStageIndex();
+
+  // const stage = stages[stageIndex];
 
   const tiles = useMemo(() => {
     const tiles: JSX.Element[] = [];

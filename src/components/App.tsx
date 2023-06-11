@@ -7,6 +7,7 @@ import { Title } from '../pages/Title';
 import { main } from '../mahjongSolitaire';
 import { setBoard, setRest, useStage } from '../states/gameState';
 import { Game } from '../pages/Game';
+import { スプラッシュ画面 } from '../pages/スプラッシュ画面';
 
 export const App = () => {
   const stage = useStage();
@@ -22,7 +23,10 @@ export const App = () => {
     <ChakraProvider>
       <Router>
         <Routes>
+          {/* <Route index element={<スプラッシュ画面 />} /> */}
           <Route path="/" element={<Layout />}>
+            {/* <Route index element={<スプラッシュ画面 />} /> */}
+            {/* <Route path="puzzle-select" element={<Title />} /> */}
             <Route index element={<Title />} />
             <Route path="game" element={<Game />} />
             {/* <Route path="clear" element={<ClearScreen />} /> */}

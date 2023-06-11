@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Box, BoxProps, Flex } from '@chakra-ui/react';
 import { useResizeObserver } from '@ishikawa_masashi/react-hooks';
 import { setPixelRatio, WIDTH } from '../../states/globalState';
+import { AspectRatio } from '../AspectRatio';
 
 type Props = {
   /*
@@ -28,31 +29,9 @@ export const ScreenFrame = (props: Props) => {
       left="0"
       right="0"
       backgroundColor={'#00b32a'}
-      // backgroundImage={'url(/classy-fabric.png)'}
+      backgroundImage={'url(/classy-fabric.png)'}
     >
-      <Flex
-        height="100%"
-        justify="center"
-        align="center"
-        backgroundColor="#00000042"
-        boxSizing="border-box"
-      >
-        <Box
-          maxWidth="100vw"
-          maxHeight="calc(9 / 16 * 100vw)"
-          width="calc(16 / 9 * 100vh)"
-          // height="100vh"
-          height="100%"
-          backgroundColor={'#00b32a'}
-          // backgroundImage={'url(/classy-fabric.png)'}
-
-          backgroundImage="/images/6555578_38130.jpg"
-          backgroundSize="contain"
-          ref={ref}
-        >
-          {children}
-        </Box>
-      </Flex>
+      <AspectRatio ratio={16 / 9}>{children}</AspectRatio>
     </Box>
   );
 };
